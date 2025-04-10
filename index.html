@@ -3,36 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Proyectos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Portafolio | SircRehnas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: #f9f9f9;
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-weight: 300;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--secondary);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: var(--light);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .filter-btn:hover {
+            background-color: #d6eaf8;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .project-card {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Mis Proyectos</h1>
-        <div class="row" id="projects-list">
-            <!-- Los proyectos se cargarán aquí con JavaScript -->
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SircRehnas</h1>
+            <p class="tagline">Desarrollador de aplicaciones web y móviles innovadoras</p>
+            <div class="social-links">
+                <a href="https://github.com/SircRehnas" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <!-- Agrega más redes sociales si las tienes -->
+            </div>
         </div>
-    </div>
+    </header>
+    
+    <main>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="tool">Herramientas</button>
+        </div>
+        
+        <div class="projects-container" id="projects-container">
+            <!-- Proyectos se cargarán dinámicamente con JavaScript -->
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 SircRehnas. Todos los derechos reservados.</p>
+        <p>Licencias Creative Commons para proyectos personales.</p>
+    </footer>
+
     <script>
-        fetch('https://api.github.com/users/sircrehnas/repos')
-            .then(response => response.json())
-            .then(repos => {
-                const container = document.getElementById('projects-list');
-                repos.forEach(repo => {
-                    if (repo.has_pages) {
-                        container.innerHTML += `
-                            <div class="col-md-4 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${repo.name}</h5>
-                                        <a href="https://sircrehnas.github.io/${repo.name}/" class="btn btn-primary">Ver Proyecto</a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
+        // Datos de los proyectos
+        const projects = [
+            {
+                title: "Planificación Web",
+                description: "Gestor de tareas y proyectos con tablero Kanban, calendario y planificación visual. Ideal para organización personal y profesional.",
+                image: "https://raw.githubusercontent.com/SircRehnas/Planificacion_Web/main/screenshot.jpg",
+                tags: ["Web", "Productividad"],
+                technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
+                demoUrl: "https://sircrehnas.github.io/Planificacion_Web/",
+                codeUrl: "https://github.com/SircRehnas/Planificacion_Web",
+                status: "En desarrollo",
+                filter: "web"
+            },
+            {
+                title: "Diario Personal Web",
+                description: "Aplicación web completa para organizar tu vida con calendario, blogs, marcadores y notas adhesivas. Con autenticación y temas personalizables.",
+                image: "https://raw.githubusercontent.com/SircRehnas/DiarioApp_Web/main/screenshot.jpg",
+                tags: ["Web", "Organización"],
+                technologies: ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
+                demoUrl: "https://sircrehnas.github.io/DiarioApp_Web/",
+                codeUrl: "https://github.com/SircRehnas/DiarioApp_Web",
+                status: "En desarrollo",
+                filter: "web"
+            },
+            {
+                title: "TicketApp Android",
+                description: "Aplicación Android para gestión de tickets con OCR, geolocalización y registro digital de gastos. Desarrollada en Kotlin.",
+                image: "https://raw.githubusercontent.com/SircRehnas/TicketApp_Android/main/screenshot.jpg",
+                tags: ["Mobile", "Productividad"],
+                technologies: ["Kotlin", "Android Studio", "OCR"],
+                demoUrl: "#",
+                codeUrl: "https://github.com/SircRehnas/TicketApp_Android",
+                status: "Alpha",
+                filter: "mobile"
+            }
+        ];
+
+        // Función para renderizar proyectos
+        function renderProjects(filter = "all") {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+            
+            const filteredProjects = filter === 'all' 
+                ? projects 
+                : projects.filter(project => project.filter === filter);
+            
+            filteredProjects.forEach((project, index) => {
+                const projectEl = document.createElement('div');
+                projectEl.className = 'project-card';
+                projectEl.style.animationDelay = `${index * 0.1}s`;
+                
+                projectEl.innerHTML = `
+                    <div class="project-image">
+                        <img src="${project.image}" alt="${project.title}">
+                        <span class="project-badge">${project.status}</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-tech">
+                            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                        <div class="project-links">
+                            ${project.demoUrl !== '#' ? `<a href="${project.demoUrl}" class="btn btn-primary" target="_blank">Demo</a>` : '<span></span>'}
+                            <a href="${project.codeUrl}" class="btn btn-secondary" target="_blank">Código</a>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(projectEl);
+            });
+        }
+
+        // Filtrado de proyectos
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderProjects(btn.dataset.filter);
+            });
+        });
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+            
+            // Animación para los elementos al hacer scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.project-card').forEach(card => {
+                observer.observe(card);
             });
+        });
     </script>
 </body>
 </html>
