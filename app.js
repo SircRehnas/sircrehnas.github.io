@@ -25,7 +25,7 @@ const projects = [
     {
         title: "🎫 TicketApp Android",
         description: "📱 Aplicación Android para gestión de tickets con OCR, geolocalización y registro digital de gastos. Desarrollada en Kotlin.",
-        image: "https://raw.githubusercontent.com/SircRehnas/TicketApp_Android/refs/heads/main/TicketApp_Alpha/app/src/main/res/playstore-icon.png?token=GHSAT0AAAAAADBUS3QD7XXUCHIP4ACVTKGGZ7YPL2Q",
+        image: "https://raw.githubusercontent.com/SircRehnas/sircrehnas.github.io/refs/heads/main/screenshots/TicketApp_Icon.png",
         tags: ["Mobile", "Productividad"],
         technologies: ["Kotlin", "Android Studio", "OCR"],
         demoUrl: "#",
