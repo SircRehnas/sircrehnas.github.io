@@ -16,7 +16,6 @@ Bienvenido/a al índice principal de mis proyectos alojados en GitHub Pages. Aqu
 Bienvenido/a al repositorio de mi portafolio personal. Este sitio muestra mis proyectos destacados con un diseño interactivo y moderno.
 
 ![Preview del Portafolio](https://raw.githubusercontent.com/SircRehnas/sircrehnas.github.io/main/screenshot.jpg)
-*(Nota: Asegúrate de añadir una imagen llamada `screenshot.jpg` a la raíz de tu repositorio para que esta vista previa funcione).*
 
 ## ✨ Características
 
