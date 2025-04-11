@@ -14,7 +14,7 @@ const projects = [
     {
         title: "📔 Diario Personal Web",
         description: "✨ Aplicación web completa para organizar tu vida con calendario, blogs, marcadores y notas adhesivas. Con autenticación y temas personalizables.",
-        image: "https://raw.githubusercontent.com/SircRehnas/DiarioApp_Web/main/screenshot.jpg",
+        image: "https://raw.githubusercontent.com/SircRehnas/DiarioApp_Web/main/screenshots/calendar.png",
         tags: ["Web", "Organización"],
         technologies: ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
         demoUrl: "https://sircrehnas.github.io/DiarioApp_Web/",
@@ -25,7 +25,7 @@ const projects = [
     {
         title: "🎫 TicketApp Android",
         description: "📱 Aplicación Android para gestión de tickets con OCR, geolocalización y registro digital de gastos. Desarrollada en Kotlin.",
-        image: "https://raw.githubusercontent.com/SircRehnas/TicketApp_Android/main/screenshot.jpg",
+        image: "https://raw.githubusercontent.com/SircRehnas/TicketApp_Android/refs/heads/main/TicketApp_Alpha/app/src/main/res/playstore-icon.png?token=GHSAT0AAAAAADBUS3QD7XXUCHIP4ACVTKGGZ7YPL2Q",
         tags: ["Mobile", "Productividad"],
         technologies: ["Kotlin", "Android Studio", "OCR"],
         demoUrl: "#",
