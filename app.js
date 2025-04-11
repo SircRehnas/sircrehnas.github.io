@@ -3,7 +3,7 @@ const projects = [
     {
         title: "📋 Planificación Web",
         description: "📌 Gestor de tareas y proyectos con tablero Kanban, calendario y planificación visual. Ideal para organización personal y profesional.",
-        image: "https://raw.githubusercontent.com/SircRehnas/Planificacion_Web/main/screenshot.jpg",
+        image: "https://raw.githubusercontent.com/SircRehnas/Planificacion_Web/refs/heads/main/screenshots/kanban_calendar.png",
         tags: ["Web", "Productividad"],
         technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
         demoUrl: "https://sircrehnas.github.io/Planificacion_Web/",
