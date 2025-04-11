@@ -1,4 +1,4 @@
-// Datos de los proyectos con emojis
+/ Datos de los proyectos con emojis
 const projects = [
     {
         title: "📋 Planificación Web",
@@ -30,21 +30,22 @@ const projects = [
         technologies: ["Kotlin", "Android Studio", "OCR"],
         demoUrl: "#",
         codeUrl: "https://github.com/SircRehnas/TicketApp_Android",
-        status: "🛠️ En Desarrollo",
+        status: "🧪 Alpha",
         filter: "mobile"
-    }
+    },
     {
-    "title": "🎮 Laberinto de Monedas Unity",
-    "description": "🕹️ Juego 3D de laberintos con enemigos, láseres y cubos magnéticos. Recolecta monedas y corazones en tres niveles de dificultad. ¡Supera el modo Difícil!",
-    "image": "https://raw.githubusercontent.com/SircRehnas/LaberintoMonedas_Unity/main/Laberinto/Assets/Textures/android/mipmap-xxxhdpi/ic_launcher_laberintoCoins.png",
-    "tags": ["3D", "Unity", "Juego"],
-    "technologies": ["C#", "Unity 6", "Shader Graph"],
-    "demoUrl": "#",
-    "codeUrl": "https://github.com/SircRehnas/LaberintoMonedas_Unity",
-    "status": "🛠️ En Desarrollo",
-    "filter": "game"
-}
+        "title": "🎮 Laberinto de Monedas Unity",
+        "description": "🕹️ Juego 3D de laberintos con enemigos, láseres y cubos magnéticos. Recolecta monedas y corazones en tres niveles de dificultad. ¡Supera el modo Difícil!",
+        "image": "https://raw.githubusercontent.com/SircRehnas/LaberintoMonedas_Unity/main/Laberinto/Assets/Textures/android/mipmap-xxxhdpi/ic_launcher_laberintoCoins.png",
+        "tags": ["3D", "Unity", "Juego"],
+        "technologies": ["C#", "Unity 6", "Shader Graph"],
+        "demoUrl": "#",
+        "codeUrl": "https://github.com/SircRehnas/LaberintoMonedas_Unity",
+        "status": "🛠️ En Desarrollo",
+        "filter": "game"
+    }
 ];
+
 
 // Función para renderizar proyectos
 function renderProjects(filter = "all") {
